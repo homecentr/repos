@@ -1,3 +1,5 @@
+variable github_token {}
+
 variable docker_image_repositories {
   type = map
 
