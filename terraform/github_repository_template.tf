@@ -14,7 +14,7 @@ resource "github_repository" "template_repo" {
   allow_merge_commit  = false  
   allow_rebase_merge  = false
 
-  private      = false
+  visibility   = "public"
   archived     = each.value.archived
   topics       = each.value.topics
 
