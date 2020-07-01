@@ -34,7 +34,7 @@ resource "github_branch_protection" "docker_image_repo" {
 
   branch       = "master"
 
-  enforce_admins = false
+  enforce_admins = true
 
   required_status_checks {
     strict   = true
