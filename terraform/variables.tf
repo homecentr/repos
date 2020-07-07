@@ -43,6 +43,7 @@ variable template_repositories {
   
   default = {
     "docker-image": { repo_name: "docker-template", archived = false, topics = [ "homecentr", "docker-image" ] }
+    "ansible-role": { repo_name: "ansible-role-template", archived = false, topics = [ "homecentr", "ansible", "ansible-role" ] }
   }
 }
 

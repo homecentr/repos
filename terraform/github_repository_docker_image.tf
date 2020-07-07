@@ -14,7 +14,7 @@ resource "github_repository" "docker_image_repo" {
   allow_merge_commit  = false  
   allow_rebase_merge  = false
 
-  visibility   = "public"
+  private      = false
   archived     = each.value.archived
   topics       = each.value.topics
 
