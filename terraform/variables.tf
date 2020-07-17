@@ -53,7 +53,10 @@ variable generic_repositories {
   default = {   
     "docs":                        { repo_name = "docs", archived = false, topics = [ "homecentr", "documentation", "mkdocs-material" ], status_checks_contexts = [ ] } 
     "rancher-os-services":         { repo_name = "rancher-os-services", archived = true, topics = [ "homecentr", "rancher-os", "service-registry" ], status_checks_contexts = [ "Semantic Pull Request" ] }
-    "testcontainers-extensions":   { repo_name = "testcontainers-extensions", archived = false, topics = [ "homecentr", "testcontainers", "docker-testing", "java-library" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }  
+
+    # Java libs
+    "testcontainers-extensions":   { repo_name = "testcontainers-extensions", archived = false, topics = [ "homecentr", "testcontainers", "docker-testing", "java-library" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
+    "lib-ansible-tests":           { repo_name = "lib-ansible-tests", archived = false, topics = [ "homecentr", "ansible", "unit-tests" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
  
     # Was not created from Docker image template => managed as a generic repository
     "docker-driver-macvlan-swarm": { repo_name = "docker-driver-macvlan-swarm", archived = true, topics = [ "homecentr", "docker-network-driver" ], status_checks_contexts = [] }
