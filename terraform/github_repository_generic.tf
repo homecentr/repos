@@ -35,4 +35,8 @@ resource "github_branch_protection" "generic_repo" {
     strict   = true
     contexts = each.value.status_checks_contexts
   }
+
+  depends_on = [
+    github_repository.generic_repo
+  ]
 }

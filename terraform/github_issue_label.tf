@@ -5,6 +5,12 @@ resource "github_issue_label" "bug" {
   name        = "bug"
   description = "Something isn't working"
   color       = "d73a4a"
+
+  depends_on = [
+    github_repository.docker_image_repo,
+    github_repository.generic_repo,
+    github_repository.template_repo
+  ]
 }
 
 resource "github_issue_label" "enhancement" {
@@ -13,6 +19,12 @@ resource "github_issue_label" "enhancement" {
 
   name       = "enhancement"
   color      = "a2eeef"
+
+  depends_on = [
+    github_repository.docker_image_repo,
+    github_repository.generic_repo,
+    github_repository.template_repo
+  ]
 }
 
 resource "github_issue_label" "question" {
@@ -22,6 +34,12 @@ resource "github_issue_label" "question" {
   name        = "question"
   description = "Further information is requested"
   color       = "d876e3"
+    
+  depends_on = [
+    github_repository.docker_image_repo,
+    github_repository.generic_repo,
+    github_repository.template_repo
+  ]
 }
 
 resource "github_issue_label" "dependencies" {
@@ -31,6 +49,12 @@ resource "github_issue_label" "dependencies" {
   name        = "dependencies"
   description = "Pull requests that update a dependency file"
   color       = "0366d6"
+
+  depends_on = [
+    github_repository.docker_image_repo,
+    github_repository.generic_repo,
+    github_repository.template_repo
+  ]
 }
 
 resource "github_issue_label" "duplicate" {
@@ -40,6 +64,12 @@ resource "github_issue_label" "duplicate" {
   name        = "duplicate"
   description = "This issue or pull request already exists"
   color       = "cfd3d7"
+
+  depends_on = [
+    github_repository.docker_image_repo,
+    github_repository.generic_repo,
+    github_repository.template_repo
+  ]
 }
 
 resource "github_issue_label" "released" {
@@ -49,6 +79,12 @@ resource "github_issue_label" "released" {
   name        = "released"
   description = ""
   color       = "ededed"
+
+  depends_on = [
+    github_repository.docker_image_repo,
+    github_repository.generic_repo,
+    github_repository.template_repo
+  ]
 }
 
 resource "github_issue_label" "wontfix" {
@@ -58,4 +94,10 @@ resource "github_issue_label" "wontfix" {
   name        = "wontfix"
   description = "This will not be worked on"
   color       = "ffffff"
+
+  depends_on = [
+    github_repository.docker_image_repo,
+    github_repository.generic_repo,
+    github_repository.template_repo
+  ]
 }
