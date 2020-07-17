@@ -40,4 +40,8 @@ resource "github_branch_protection" "docker_image_repo" {
     strict   = true
     contexts = each.value.status_checks_contexts
   }
+
+  depends_on = [
+    github_repository.docker_image_repo
+  ]
 }
