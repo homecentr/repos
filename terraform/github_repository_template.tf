@@ -21,5 +21,8 @@ resource "github_repository" "template_repo" {
 
   lifecycle {
     prevent_destroy = true
+    ignore_changes = [
+      "auto_init"
+    ]
   } 
 }
