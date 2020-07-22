@@ -14,12 +14,16 @@ resource "github_repository" "generic_repo" {
   allow_merge_commit  = false  
   allow_rebase_merge  = false
 
+  auto_init    = true
   private      = false
   archived     = each.value.archived
   topics       = each.value.topics
 
   lifecycle {
-    prevent_destroy = true
+    # prevent_destroy = true
+    ignore_changes = [
+      auto_init
+    ]
   } 
 }
 

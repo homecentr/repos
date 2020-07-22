@@ -63,6 +63,6 @@ variable generic_repositories {
     "docker-dhcp-exporter":        { repo_name = "docker-dhcp-exporter", archived = false, topics = [ "homecentr", "isc-dhcp", "prometheus-exporter", "fork", "docker-image" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
     
     # Ansible
-    "ansible-collections-homecentr":  { repo_name = "ansible-collections-homecentr", archived = false, topics = [ "homecentr", "ansible", "ansible-collection" ], status_checks_contexts = [] }
+    "ansible-collection-homecentr":  { repo_name = "ansible-collection-homecentr", archived = false, topics = [ "homecentr", "ansible", "ansible-collection" ], status_checks_contexts = [] }
   }
 }
