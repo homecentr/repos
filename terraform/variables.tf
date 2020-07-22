@@ -43,7 +43,7 @@ variable template_repositories {
   
   default = {
     "docker-image": { repo_name: "docker-template", archived = false, topics = [ "homecentr", "docker-image" ] }
-    "ansible-role": { repo_name: "ansible-role-template", archived = false, topics = [ "homecentr", "ansible", "ansible-role" ] }
+    "ansible-role": { repo_name: "ansible-role-template", archived = true, topics = [ "homecentr", "ansible", "ansible-role" ] }
   }
 }
 
@@ -61,5 +61,8 @@ variable generic_repositories {
     # Was not created from Docker image template => managed as a generic repository
     "docker-driver-macvlan-swarm": { repo_name = "docker-driver-macvlan-swarm", archived = true, topics = [ "homecentr", "docker-network-driver" ], status_checks_contexts = [] }
     "docker-dhcp-exporter":        { repo_name = "docker-dhcp-exporter", archived = false, topics = [ "homecentr", "isc-dhcp", "prometheus-exporter", "fork", "docker-image" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
+    
+    # Ansible
+    "ansible-collections-homecentr":  { repo_name = "ansible-collections-homecentr", archived = false, topics = [ "homecentr", "ansible", "ansible-collection" ], status_checks_contexts = [] }
   }
 }
