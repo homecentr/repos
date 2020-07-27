@@ -5,7 +5,7 @@ variable docker_image_repositories {
 
   default = {
     # Active repositories
-    "base":               { repo_name = "docker-base", archived = false, topics = [ "homecentr", "alpine", "centos", "internal", "docker-image" ], status_checks_contexts = ["Semantic Pull Request", "build (alpine)", "build (centos)"] }
+    "base":               { repo_name = "docker-base", archived = false, topics = [ "homecentr", "alpine", "centos", "internal", "docker-image" ], status_checks_contexts = ["Semantic Pull Request", "build (alpine)" ] }
     "cadvisor":           { repo_name = "docker-cadvisor", archived = false, topics = [ "homecentr", "cadvisor", "monitoring", "docker-image" ], status_checks_contexts = ["Semantic Pull Request", "build"] }
     "certbot":            { repo_name = "docker-certbot", archived = false, topics = [ "homecentr", "letsencrypt", "certbot", "docker-image" ], status_checks_contexts = ["Semantic Pull Request", "build"] },
     "cron-base":          { repo_name = "docker-cron-base", archived = false, topics = [ "homecentr", "crontab", "prometheus-push-gateway", "docker-image" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
