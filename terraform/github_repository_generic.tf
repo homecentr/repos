@@ -28,10 +28,14 @@ resource "github_repository" "generic_repo" {
 }
 
 resource "github_branch_protection" "generic_repo" {
-  for_each     = var.generic_repositories
-  repository   = each.value.repo_name
+  for_each     =  {
+    for repo in var.generic_repositories : repo => repo
+    if !repo.private
+  }
 
-  branch       = "master"
+  repository_id = github_repository.generic_repo[each.key].repo_id
+
+  pattern       = "master"
 
   enforce_admins = true
 
