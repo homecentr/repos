@@ -19,7 +19,7 @@ resource "github_repository" "generic_repo" {
   archived     = each.value.archived
   topics       = each.value.topics
 
-  vulnerability_alerts = true
+  vulnerability_alerts = !each.value.archived
 
   lifecycle {
     prevent_destroy = true
