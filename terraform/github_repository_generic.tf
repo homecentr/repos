@@ -34,7 +34,7 @@ resource "github_branch_protection" "generic_repo" {
     for key, repo in var.generic_repositories : key => repo if !repo.private
   }
 
-  repository_id = github_repository.generic_repo[each.key].repo_id
+  repository_id = github_repository.generic_repo[each.key].node_id
 
   pattern       = "master"
 
