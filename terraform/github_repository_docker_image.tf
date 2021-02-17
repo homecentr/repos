@@ -33,10 +33,10 @@ resource "github_repository" "docker_image_repo" {
 }
 
 resource "github_branch_protection" "docker_image_repo" {
-  for_each     = var.docker_image_repositories
-  repository   = each.value.repo_name
+  for_each       = var.docker_image_repositories
+  repository_id  = github_repository.docker_image_repo[each.key].repo_id
 
-  branch       = "master"
+  pattern        = "master"
 
   enforce_admins = true
 
