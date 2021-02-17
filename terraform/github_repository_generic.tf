@@ -15,7 +15,7 @@ resource "github_repository" "generic_repo" {
   allow_rebase_merge  = false
 
   auto_init    = true
-  private      = false
+  private      = each.value.private
   archived     = each.value.archived
   topics       = each.value.topics
 
