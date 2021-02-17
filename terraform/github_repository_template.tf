@@ -18,6 +18,8 @@ resource "github_repository" "template_repo" {
   visibility   = "public"
   archived     = each.value.archived
   topics       = each.value.topics
+  
+  vulnerability_alerts = true
 
   lifecycle {
     prevent_destroy = true

@@ -19,6 +19,8 @@ resource "github_repository" "docker_image_repo" {
   archived     = each.value.archived
   topics       = each.value.topics
 
+  vulnerability_alerts = true
+
   template {
     owner = "homecentr"
     repository = "docker-template"
