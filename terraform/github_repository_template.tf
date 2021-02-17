@@ -15,9 +15,11 @@ resource "github_repository" "template_repo" {
   allow_rebase_merge  = false
 
   auto_init    = true
-  private      = false
+  visibility   = "public"
   archived     = each.value.archived
   topics       = each.value.topics
+  
+  vulnerability_alerts = !each.value.archived
 
   lifecycle {
     prevent_destroy = true

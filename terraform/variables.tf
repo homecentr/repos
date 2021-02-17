@@ -51,18 +51,21 @@ variable generic_repositories {
   type = map
 
   default = {   
-    "docs":                        { repo_name = "docs", archived = false, topics = [ "homecentr", "documentation", "mkdocs-material" ], status_checks_contexts = [ ] } 
-    "rancher-os-services":         { repo_name = "rancher-os-services", archived = true, topics = [ "homecentr", "rancher-os", "service-registry" ], status_checks_contexts = [ "Semantic Pull Request" ] }
+    "docs":                        { repo_name = "docs", archived = false, private = false, topics = [ "homecentr", "documentation", "mkdocs-material" ], status_checks_contexts = [ ] } 
+    "rancher-os-services":         { repo_name = "rancher-os-services", archived = true, private = false, topics = [ "homecentr", "rancher-os", "service-registry" ], status_checks_contexts = [ "Semantic Pull Request" ] }
 
     # Java libs
-    "lib-testcontainers-extensions":  { repo_name = "lib-testcontainers-extensions", archived = false, topics = [ "homecentr", "testcontainers", "docker-testing", "java-library" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
-    "lib-ansible-tests":              { repo_name = "lib-ansible-tests", archived = false, topics = [ "homecentr", "ansible", "unit-tests" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
+    "lib-testcontainers-extensions":  { repo_name = "lib-testcontainers-extensions", archived = false, private = false, topics = [ "homecentr", "testcontainers", "docker-testing", "java-library" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
+    "lib-ansible-tests":              { repo_name = "lib-ansible-tests", archived = false, private = false, topics = [ "homecentr", "ansible", "unit-tests" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
  
     # Was not created from Docker image template => managed as a generic repository
-    "docker-driver-macvlan-swarm": { repo_name = "docker-driver-macvlan-swarm", archived = true, topics = [ "homecentr", "docker-network-driver" ], status_checks_contexts = [] }
-    "docker-dhcp-exporter":        { repo_name = "docker-dhcp-exporter", archived = false, topics = [ "homecentr", "isc-dhcp", "prometheus-exporter", "fork", "docker-image" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
+    "docker-driver-macvlan-swarm": { repo_name = "docker-driver-macvlan-swarm", archived = true, private = false, topics = [ "homecentr", "docker-network-driver" ], status_checks_contexts = [] }
+    "docker-dhcp-exporter":        { repo_name = "docker-dhcp-exporter", archived = false, private = false, topics = [ "homecentr", "isc-dhcp", "prometheus-exporter", "fork", "docker-image" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
     
-    # Ansible
-    "ansible-collection-system":  { repo_name = "ansible-collection-system", archived = false, topics = [ "homecentr", "ansible", "ansible-collection" ], status_checks_contexts = [] }
+    # Ansible roles & role collections
+    "ansible-collection-system":  { repo_name = "ansible-collection-system", archived = false, private = false, topics = [ "homecentr", "ansible", "ansible-collection" ], status_checks_contexts = [] }
+
+    # Ansible playbooks
+    "ansible-playbook-pve": { repo_name = "ansible-playbook-pve", archived = false, private = true, topics = [ "homecentr", "ansible", "proxmox" ], status_checks_contexts = [] }
   }
 }

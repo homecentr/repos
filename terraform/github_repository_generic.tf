@@ -15,9 +15,11 @@ resource "github_repository" "generic_repo" {
   allow_rebase_merge  = false
 
   auto_init    = true
-  private      = false
+  visibility   = each.value.private ? "private" : "public"
   archived     = each.value.archived
   topics       = each.value.topics
+
+  vulnerability_alerts = !each.value.archived
 
   lifecycle {
     prevent_destroy = true
@@ -28,10 +30,13 @@ resource "github_repository" "generic_repo" {
 }
 
 resource "github_branch_protection" "generic_repo" {
-  for_each     = var.generic_repositories
-  repository   = each.value.repo_name
+  for_each     =  {
+    for key, repo in var.generic_repositories : key => repo if !repo.private
+  }
 
-  branch       = "master"
+  repository_id = github_repository.generic_repo[each.key].node_id
+
+  pattern       = "master"
 
   enforce_admins = true
 

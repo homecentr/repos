@@ -15,9 +15,11 @@ resource "github_repository" "docker_image_repo" {
   allow_rebase_merge  = false
 
   auto_init    = true
-  private      = false
+  visibility   = "public"
   archived     = each.value.archived
   topics       = each.value.topics
+
+  vulnerability_alerts = !each.value.archived
 
   template {
     owner = "homecentr"
@@ -33,10 +35,10 @@ resource "github_repository" "docker_image_repo" {
 }
 
 resource "github_branch_protection" "docker_image_repo" {
-  for_each     = var.docker_image_repositories
-  repository   = each.value.repo_name
+  for_each       = var.docker_image_repositories
+  repository_id  = github_repository.docker_image_repo[each.key].node_id
 
-  branch       = "master"
+  pattern        = "master"
 
   enforce_admins = true
 
