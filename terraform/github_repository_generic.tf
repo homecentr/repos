@@ -15,7 +15,7 @@ resource "github_repository" "generic_repo" {
   allow_rebase_merge  = false
 
   auto_init    = true
-  private      = each.value.private
+  visibility   = each.value.private ? "private" : "public"
   archived     = each.value.archived
   topics       = each.value.topics
 
@@ -29,8 +29,7 @@ resource "github_repository" "generic_repo" {
 
 resource "github_branch_protection" "generic_repo" {
   for_each     =  {
-    for repo in var.generic_repositories : repo => repo
-    if !repo.private
+    for repo in var.generic_repositories : repo => repo if !repo.private
   }
 
   repository_id = github_repository.generic_repo[each.key].repo_id
