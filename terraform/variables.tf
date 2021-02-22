@@ -64,6 +64,7 @@ variable generic_repositories {
     
     # Ansible roles & role collections
     "ansible-collection-system":  { repo_name = "ansible-collection-system", archived = false, private = false, topics = [ "homecentr", "ansible", "ansible-collection" ], status_checks_contexts = [] }
+    "ansible-collection-services":  { repo_name = "ansible-collection-services", archived = false, private = false, topics = [ "homecentr", "ansible", "ansible-collection" ], status_checks_contexts = [] }
 
     # Ansible playbooks
     "ansible-playbook-pve": { repo_name = "ansible-playbook-pve", archived = false, private = true, topics = [ "homecentr", "ansible", "proxmox" ], status_checks_contexts = [] }
