@@ -43,7 +43,6 @@ variable template_repositories {
   
   default = {
     "docker-image": { repo_name: "docker-template", archived = false, topics = [ "homecentr", "docker-image" ] }
-    "ansible-role": { repo_name: "ansible-role-template", archived = true, topics = [ "homecentr", "ansible", "ansible-role" ] }
   }
 }
 
@@ -56,7 +55,7 @@ variable generic_repositories {
 
     # Java libs
     "lib-testcontainers-extensions":  { repo_name = "lib-testcontainers-extensions", archived = false, private = false, topics = [ "homecentr", "testcontainers", "docker-testing", "java-library" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
-    "lib-ansible-tests":              { repo_name = "lib-ansible-tests", archived = false, private = false, topics = [ "homecentr", "ansible", "unit-tests" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
+    "lib-ansible-tests":              { repo_name = "lib-ansible-tests", archived = true, private = false, topics = [ "homecentr", "ansible", "unit-tests" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
  
     # Was not created from Docker image template => managed as a generic repository
     "docker-driver-macvlan-swarm": { repo_name = "docker-driver-macvlan-swarm", archived = true, private = false, topics = [ "homecentr", "docker-network-driver" ], status_checks_contexts = [] }
