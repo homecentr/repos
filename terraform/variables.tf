@@ -68,5 +68,6 @@ variable generic_repositories {
     # Ansible playbooks
     "ansible-playbook-pve": { repo_name = "ansible-playbook-pve", archived = false, private = true, topics = [ "homecentr", "ansible", "proxmox" ], status_checks_contexts = [] }
     "ansible-playbook-swarm": { repo_name = "ansible-playbook-swarm", archived = false, private = true, topics = [ "homecentr", "ansible", "docker-swarm", "services" ], status_checks_contexts = [] }
+    "ansible-playbooks": { repo_name = "ansible-playbooks", archived = false, private = false, topics = [ "homecentr", "ansible", "docker-swarm", "services" ], status_checks_contexts = [] }
   }
 }
