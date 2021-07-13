@@ -5,7 +5,7 @@ variable docker_image_repositories {
 
   default = {
     # Active repositories
-    "base":               { repo_name = "docker-base", archived = false, topics = [ "homecentr", "alpine", "centos", "internal", "docker-image" ], status_checks_contexts = ["Semantic Pull Request", "build (alpine)" ] }
+    "base":               { repo_name = "docker-base", archived = false, topics = [ "homecentr", "alpine", "internal", "docker-image" ], status_checks_contexts = ["Semantic Pull Request", "build (alpine)" ] }
     "cadvisor":           { repo_name = "docker-cadvisor", archived = false, topics = [ "homecentr", "cadvisor", "monitoring", "docker-image" ], status_checks_contexts = ["Semantic Pull Request", "build"] }
     "certbot":            { repo_name = "docker-certbot", archived = false, topics = [ "homecentr", "letsencrypt", "certbot", "docker-image" ], status_checks_contexts = ["Semantic Pull Request", "build"] },
     "cron-base":          { repo_name = "docker-cron-base", archived = false, topics = [ "homecentr", "crontab", "prometheus-push-gateway", "docker-image" ], status_checks_contexts = [ "Semantic Pull Request", "build" ] }
@@ -68,5 +68,6 @@ variable generic_repositories {
     # Ansible playbooks
     "ansible-playbook-pve": { repo_name = "ansible-playbook-pve", archived = false, private = true, topics = [ "homecentr", "ansible", "proxmox" ], status_checks_contexts = [] }
     "ansible-playbook-swarm": { repo_name = "ansible-playbook-swarm", archived = false, private = true, topics = [ "homecentr", "ansible", "docker-swarm", "services" ], status_checks_contexts = [] }
+    "ansible-playbooks": { repo_name = "ansible-playbooks", archived = false, private = false, topics = [ "homecentr", "ansible", "docker-swarm", "services" ], status_checks_contexts = [] }
   }
 }
